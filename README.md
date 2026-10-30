@@ -3,13 +3,14 @@ These responses are related to the requirements which were provided to me on beh
 Application was developed on kubernetes-in-docker to save money so there may be some extra steps before it can be run in aws.
 
 Application:
-
+```
 The app is generic python with FastAPI overlay running on port 8000.  It currently has the following api endpoints:
 /         - root (used by liveness and readiness probes)
 /payments - external api which is hit by 3rd party payment service
 /batch    - batch api used for large jobs run once a day
 /write    - tests db write to external rds instance (not hooked up, cost prohibitive)
 /metrics  - app metrics, required for horizontal pod auto-scaling based on requests load
+```
 
 I use external uvicorn to run the application rather than have python run it directly.  This would allow us to change the underlying server without changing the application code.
 
