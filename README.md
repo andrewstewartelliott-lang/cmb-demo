@@ -48,7 +48,7 @@ Ideally I would implement ArgoCD or FluxCD to help with faster sync, but neither
 Deployments can be run locally with the "helm.sh" script.  Pre-requisite is to have csi-secret-store-drive in order for the secretprovider to work correctly.  Deployments can easily be rolled back in production with the `helm rollback` command.  As this is a deployment and not a statefulset, we can see the complete history of deployments without an external tool.
 
 Monitoring/Observability (not implemented because of time)
-
+```
 How would I know the service is healthy?
 readiness and liveness probes in the helm deployment
 create synthetic checks via datadog, kuberhealthy or grafana/prom which:
@@ -58,7 +58,7 @@ create synthetic checks via datadog, kuberhealthy or grafana/prom which:
 - monitor read/write latency of DB
 - monitor iops of DB
 - use an external 3rd party service to test the ingress gateway into the cluster
-
+```
 The end game would be to have a dashboard with all these metrics included so we can guage service health quickly and which is available to business owners.
 
 I would page someone for 503 or 404 application errors, disconnected database, login errors, payment processing errors and more than 30 pods running at one time (or some kind of spend metric).
@@ -68,7 +68,7 @@ Ideally we would classify issues from P1 -> P5 and have written procedures for e
 
 end of explanation, start of normal readme.
 
-# Payments API
+# CMB Demo
 
 A FastAPI service that listens on port `8000`, provides payment and batch example endpoints, and exposes Prometheus metrics. The published image is [`andrewstewartelliott/app`](https://hub.docker.com/repository/docker/andrewstewartelliott/app/general).
 
