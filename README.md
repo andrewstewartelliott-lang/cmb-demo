@@ -23,7 +23,7 @@ Docker Image
 Image is built and tagged locally and pushed to dockerhub with my account, where it will be consumed by the helm chart.  Current image is 1.0.0.
 https://hub.docker.com/repository/docker/andrewstewartelliott/app/general
 Images are currently scanned with Trivy (see github workflows).  In the future I would perform automated penetration tests with zap and kubernetes resource orchestrator.
-
+```
 Helm Deployment
 
 This is a custom-built helm chart, stored and run locally, which delivers the following:
@@ -31,7 +31,7 @@ deployment  - standard, mounts external-secrets directly, variable replicas
 hpa         - used for scaling
 ingress     - used to map domain into the cluster (should work natively with external-dns or similar)
 service     - expose the services to the cluster
-
+```
 *** Note ***
 ingress-gateway is deprecated and should be replaced with gateway-api and httproutes.  It was deprecated at the start of this year and should be replaced.
 
